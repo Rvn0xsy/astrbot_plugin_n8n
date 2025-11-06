@@ -21,7 +21,7 @@ class MyPlugin(Star):
         """这是一个 调用n8n 的指令"""  # 这是 handler 的描述，将会被解析方便用户了解插件内容。建议填写。
         sender_name = event.get_sender_name()
         message_str = event.message_str  # 用户发的纯文本消息字符串
-        logger.info(event)
+        logger.info(event.__dict__)
         url = self.config["n8n"].get(
             "n8n_webhook_url"
         )  # 从配置中获取 n8n 的 webhook URL
